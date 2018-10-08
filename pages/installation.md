@@ -36,10 +36,10 @@ sitemap:
 
 ### 快速设置
 
-1.  安装 Java 8 [Oracle 官网](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-2.  安装 Node.js [Node.js 官网](http://nodejs.org/) (建议选择 LTS 64位 版本)
-3.  安装 NPM 和 Node.js 是一起安装好了，但是你还需要更新下： `npm install -g npm`
-4.  如果你打算使用 JHipster Marketplace, 安装 Yeoman: `npm install -g yo`
+1.  安装 Java 8， [Oracle 官网](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+2.  安装 Node.js， [Node.js 官网](http://nodejs.org/) (必须选择 LTS 64位 版本，非 LTS 版本不支持)
+3.  安装 NPM，NPM 和 Node.js 是一起安装好了，但是你还需要更新一下 NPM 本身： `npm install -g npm`
+4.  如果你打算将来使用 JHipster Marketplace, 还需要安装 Yeoman: `npm install -g yo`
 5.  安装 JHipster: `npm install -g generator-jhipster`
 
 一旦 JHipster 安装好了，下一步就可以开始：[创建应用]({{ site.url }}/creating-an-app/)
@@ -259,6 +259,7 @@ Kitematic 是个非常好用图形化管理工具，集成在 Docker Toolbox 中
     所以你不能：
     <ul>
         <li>运行 docker-compose</li>
-        <li>创建 Docker 镜像 (Maven 的 goal: <code>dockerfile:build</code> 或 Gradle task: <code>buildDocker</code>)</li>
+        <li>创建 Docker 镜像 (Maven 的 goal: <code>jib:dockerBuild</code> 或 Gradle task: <code>jibDockerBuild</code>)</li>
     </ul>
+    However, you will be able to use [jib](https://github.com/GoogleContainerTools/jib)'s daemonless mode which can build a docker image and push it to a registry without access to a docker daemon (Maven goal: <code>jib:build</code> or Gradle task: <code>jibBuild</code>). But you will need to setup credentials to the docker registry as a pre-requisite of building the app. See the [Jib plugin configuration documentations](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#configuration) for more details.
 </div>
